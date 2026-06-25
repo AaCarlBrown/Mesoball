@@ -1,0 +1,29 @@
+# Large data caches — regenerated locally, never committed
+*.parquet
+pa_panel.parquet
+leverage_panel.parquet
+pa_team_share.parquet
+pa_allocation_panel.parquet
+ 
+# Raw Retrosheet / external data
+retrosheet/
+overnight_effect_data/
+ 
+# OS duplicate files
+*" Copy"*.csv
+*"- Copy"*.py
+*"- Copy"*.txt
+ 
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+ 
+# Editor / OS
+.DS_Store
+Thumbs.db
+ 
+# Optional: uncomment to keep generated results out of the repo
+# *.csv
+# *_summary.txt
