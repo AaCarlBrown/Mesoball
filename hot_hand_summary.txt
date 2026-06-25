@@ -1,0 +1,17 @@
+HOT HAND  (opponent-purged residual, Miller-Sanjurjo bias-corrected)
+========================================================================
+ 14,382,806 non-pitcher PAs
+
+  == all batters, career PA sequence ==
+  players (>= 200 PA): 5,715   |  ordered by ['gid', 'inning']
+  pooled lag-1 autocorr  UNCORRECTED : +0.00487   <- shows the M-S bias
+  pooled lag-1 autocorr  CORRECTED   : +0.00527     <- the hot-hand estimate
+  between-player true SD (EB)        : 0.00000   (sampling SD 0.02006)
+  between-player SD, approx 95% upper bound : 0.00351
+  binary on-base permutation z (mean over 4000 players): +0.4054
+
+  MEASURED next-PA effect (same residual scale, within batter):
+    after HR : +0.01109   after K : -0.00811
+    HR - K next-PA value  : +0.01920   <- the practical hot-hand size
+    platoon (opp - same hand) : +0.01789   <- same currency, for comparison
+    ratio hot-hand / platoon  : 1.07

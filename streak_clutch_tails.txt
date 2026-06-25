@@ -1,0 +1,59 @@
+names loaded: 26,961
+
+=== Streaky -- 1,771 players (>= 3000 PA) ===
+  mean +0.00562   observed SD 0.01443   sampling-noise SD 0.01424
+  observed/sampling ratio 1.01   (1.0 = pure luck; >1 = some real spread)
+  under pure noise, 1,771 draws give max z ~ +3.42, 10th ~ +2.54
+  TOP 10 most streaky:
+    William Harold Morris    z=+3.24  stat=+0.0524  PA=4443
+    Donovan (Preciado) Solano z=+3.16  stat=+0.0512  PA=3185
+    Ryan Matthew Doumit      z=+2.88  stat=+0.0471  PA=3407
+    James Robert Horner      z=+2.80  stat=+0.0461  PA=4213
+    Moises Rojas Alou        z=+2.79  stat=+0.0458  PA=7913
+    DeWain Lee Stevens       z=+2.77  stat=+0.0456  PA=3724
+    George Archibald Watkins z=+2.76  stat=+0.0455  PA=3528
+    Francis Joseph O'Doul    z=+2.71  stat=+0.0447  PA=3580
+    John Bernard Lobert      z=+2.66  stat=+0.0440  PA=3101
+    Cody Joseph Ross         z=+2.56  stat=+0.0426  PA=3202
+  top-10 mean z +2.83
+  BOTTOM 10 least streaky:
+    Maicer Izturis           z=-4.38  stat=-0.0576  PA=3350
+    Gordon Craig Reynolds    z=-3.97  stat=-0.0517  PA=4317
+    Michael Jorgensen        z=-3.75  stat=-0.0484  PA=4034
+    Thomas Alan Pagnozzi     z=-3.13  stat=-0.0396  PA=3142
+    Oscar Emil Felsch        z=-2.98  stat=-0.0374  PA=3134
+    Gilbert Fitzgerald Coan  z=-2.84  stat=-0.0354  PA=3165
+    Jeffrey Adam Everett     z=-2.84  stat=-0.0353  PA=3069
+    Darin Charles Erstad     z=-2.79  stat=-0.0347  PA=6628
+    Robert Ralph Skinner     z=-2.73  stat=-0.0337  PA=4874
+    Edward Michael Kasko     z=-2.64  stat=-0.0325  PA=3881
+  bottom-10 mean z -3.21
+
+=== Clutch -- 1,762 players (>= 3000 PA) ===
+  mean -0.00701   observed SD 0.02314   sampling-noise SD 0.02251
+  observed/sampling ratio 1.03   (1.0 = pure luck; >1 = some real spread)
+  under pure noise, 1,762 draws give max z ~ +3.41, 10th ~ +2.55
+  TOP 10 most clutch:
+    Paul Sterling DeJong     z=+4.29  stat=+0.0923  PA=3496
+    Mickey Charles Mantle    z=+3.47  stat=+0.0732  PA=9758
+    Carlos Felipe Pena       z=+3.32  stat=+0.0698  PA=5842
+    Rougned Roberto Odor     z=+2.96  stat=+0.0615  PA=4409
+    Gus Triandos             z=+2.92  stat=+0.0605  PA=4375
+    Jose Joaquin (Lopez) Azcue z=+2.84  stat=+0.0586  PA=3050
+    Allen Lorenz Pollock     z=+2.79  stat=+0.0576  PA=4141
+    Patrick James Meares     z=+2.77  stat=+0.0570  PA=3549
+    William Beck Nicholson   z=+2.75  stat=+0.0567  PA=6284
+    Maikel Antonio Franco    z=+2.74  stat=+0.0564  PA=3534
+  top-10 mean z +3.08
+  BOTTOM 10 least clutch:
+    Shane Lee Mack           z=-4.11  stat=-0.1022  PA=3212
+    Jay Jonathan Gibbons     z=-3.54  stat=-0.0888  PA=3156
+    Nicholas John Hundley    z=-3.33  stat=-0.0841  PA=3355
+    Harry Edwin Heilmann     z=-2.88  stat=-0.0737  PA=8887
+    Pedro Manuel Alvarez     z=-2.83  stat=-0.0726  PA=3290
+    Joseph Nicholas Gallo    z=-2.81  stat=-0.0720  PA=3383
+    Harry Loran Leibold      z=-2.54  stat=-0.0658  PA=4871
+    John Leonard Hopp        z=-2.54  stat=-0.0657  PA=4786
+    Anthony Richard Conigliaro z=-2.53  stat=-0.0655  PA=3562
+    Dion James               z=-2.52  stat=-0.0654  PA=3054
+  bottom-10 mean z -2.96

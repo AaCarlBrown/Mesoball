@@ -1,0 +1,17 @@
+VALIDATE FIELDING  (does the allocation residual contain OAA?)
+======================================================================
+overlap: 4,026 player-seasons (1,108 players, 2016-2025); baserunning control = sprint_speed
+
+--- season level (player-clustered) ---
+  all, OAA only                        OAA/+1SD=+0.0250 (t +5.2)  R2=0.011  n=4,026
+  all, OAA + baserunning               OAA/+1SD=+0.0259 (t +5.2)  R2=0.011  n=4,026; run -0.004 (t -0.8)
+  sub-full-time, OAA + baserunning     OAA/+1SD=+0.0264 (t +5.4)  R2=0.011  n=3,660; run -0.005 (t -0.9)
+
+--- career level (1,108 players, PA-weighted) ---
+  career, OAA only                     OAA/+1SD=+0.0249 (t +4.4)  R2=0.017  n=1,108
+  career, OAA + baserunning            OAA/+1SD=+0.0276 (t +4.7)  R2=0.020  n=1,108; run -0.010 (t -1.7)
+  career sub-full-time, OAA + baserunning OAA/+1SD=+0.0272 (t +4.6)  R2=0.019  n=1,066; run -0.010 (t -1.6)
+
+READ: t-stat says the fielding signal is present; R2 says how much of the
+residual it is. Career sub-full-time R2 = 0.02 is the headline number for
+'what share of value-beyond-the-bat is the glove.'

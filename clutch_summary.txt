@@ -1,0 +1,23 @@
+CLUTCH / LEVERAGE  (opponent-purged)
+================================================================
+ 14,284,887 non-pitcher PAs with leverage state
+
+  == late & close (inning>=7, |diff|<=1) ==
+  high-leverage share: 12.2%   PAs 14,284,887
+  RAW    clutch (net season+batter)      : -0.01404
+  PURGED clutch (also net pitcher)       : -0.00702   <- the opponent-netted effect
+  selection (raw - purged) = closer eff  : -0.00702
+  clutch-skill: 4,811 batters (>= 50 PA each side)
+    pooled mean high-minus-low : -0.00777
+    between-player true SD (EB): 0.00628   (sampling SD 0.03344)
+    true SD approx 95% upper   : 0.00885
+
+  == lev_proxy top tertile ==
+  high-leverage share: 34.2%   PAs 14,284,887
+  RAW    clutch (net season+batter)      : -0.01011
+  PURGED clutch (also net pitcher)       : -0.00680   <- the opponent-netted effect
+  selection (raw - purged) = closer eff  : -0.00331
+  clutch-skill: 6,140 batters (>= 50 PA each side)
+    pooled mean high-minus-low : -0.00729
+    between-player true SD (EB): 0.00539   (sampling SD 0.02832)
+    true SD approx 95% upper   : 0.00733

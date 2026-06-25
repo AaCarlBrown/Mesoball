@@ -1,0 +1,12 @@
+HAND-SPLIT BATTER SKILL with empirical-Bayes shrinkage
+======================================================================
+  [R] sigma2_PA=0.26378  sigma2_between=0.012015  K=22 PA  (wOBA stabilizes ~150-300 PA; K low => see caveat)
+  [R] median N=708  median rho=0.97  min rho=0.08
+  [L] sigma2_PA=0.23003  sigma2_between=0.009732  K=24 PA  (wOBA stabilizes ~150-300 PA; K low => see caveat)
+  [L] median N=295  median rho=0.93  min rho=0.08
+
+batters with both-hand skills: 6,693
+corr(tau_R_eb, tau_L_eb): +0.883  (high = ability travels across hands)
+SD(overall) = 0.0989   SD(split) = 0.0508 wOBA
+mean split (~=0 after anchoring): -0.00763
+corr(overall, split): +0.263  (near 0 => clean decomposition for step 2)

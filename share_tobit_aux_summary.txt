@@ -1,0 +1,75 @@
+SHARE-TOBIT AUXILIARY TESTS  (one estimator: censored-share, c=0.90, batter-clustered SE)
+============================================================================
+matched 39,924 player-seasons; mean team PA 5,646; headline c = 0.1054
+
+--- DH null: dh_regime:pos, PA-equivalent  [10.1% cens] ---
+  (prior count/OLS: C +2.0, SS -12.8, 2B -10.4, 3B -12.2, CF +3.8, 1B +15.2; VIF~1.8)
+   pos   dh:pos    SE      t    VIF
+     C      2.9  11.4   0.25    1.8
+    SS     -2.9  11.3  -0.26    1.8
+    2B     -2.7  10.5  -0.25    1.8
+    3B      4.6  10.3   0.45    1.8
+    CF     12.3  10.4   1.18    1.9
+    1B     16.7  11.3   1.47    1.9
+      dh:pos VIF 1.8-1.9
+     exp:pos VIF 2.0-2.1
+   integ:pos VIF 2.9-3.1
+
+--- Contact M1: BIP_z:pos, PA-equivalent per +1 SD balls-in-play  [10.1% cens] ---
+  (prior count/OLS M1: 2B +18 t3.4, 3B +16 t3.2)
+   pos  bip:pos    SE      t    VIF
+     C     -8.4   5.9  -1.43    1.4
+    SS     15.2   5.1   3.00    1.3
+    2B     21.0   5.0   4.19    1.3
+    3B     23.7   5.1   4.64    1.3
+    CF      3.9   5.1   0.76    1.2
+    1B     12.3   5.6   2.20    1.2
+--- Contact M2: BIP_z:pos AFTER trend:pos (does contact beat generic time?) ---
+   pos  bip:pos    SE      t
+     C      8.5  16.6   0.52
+    SS     11.1  15.7   0.71
+    2B     25.4  15.3   1.66
+    3B     -2.5  15.8  -0.16
+    CF     39.8  15.4   2.59
+    1B     16.5  16.3   1.02
+--- Contact M3: per-decade position premium (PA-equiv) vs decade BIP_rate ---
+  decade  BIP        C     SS     2B     3B     CF     1B
+   1910  0.81     -41    130     83    104     38     63
+   1920  0.85     -50    142    113    107     29     81
+   1930  0.83     -15    126    104     96     60     37
+   1940  0.81      -2    160    124     88    112     91
+   1950  0.77       1    140    126     63     84     36
+   1960  0.74     -13    138    115     88     47      5
+   1970  0.74       4    129     98     75     54     15
+   1980  0.74      -2    115    109     45     57     19
+   1990  0.71      -1    116     79     47     74     33
+   2000  0.70      10    123     78     46     65     37
+   2010  0.67      -5    105     61     36     66     20
+   2020  0.64      10    101     60     33     35     61
+  corr(premium, BIP_rate) across decades:
+       C: -0.71
+      SS: +0.77
+      2B: +0.71
+      3B: +0.91
+      CF: +0.06
+      1B: +0.45
+
+--- Expansion: exp_intensity:pos, PA-equivalent  ---
+  (prior count/OLS, decay 3/5: SS +21/+20, 2B +20/+14, 3B +22/+14, CF +29/+26, 1B -6/-9, C +4/+5)
+  decay=3yr  [10.1% cens]    pos  exp:pos    SE      t    VIF
+                  C      3.8  15.5   0.25    1.3
+                 SS      6.5  14.2   0.46    1.3
+                 2B     13.6  13.3   1.02    1.3
+                 3B     -3.3  14.2  -0.23    1.2
+                 CF      2.0  13.6   0.14    1.2
+                 1B    -21.4  14.0  -1.53    1.2
+  decay=5yr  [10.1% cens]    pos  exp:pos    SE      t    VIF
+                  C      7.7  13.3   0.58    1.3
+                 SS      6.2  12.2   0.51    1.3
+                 2B     10.3  11.3   0.91    1.3
+                 3B     -6.9  12.2  -0.56    1.2
+                 CF      0.6  11.7   0.05    1.2
+                 1B    -21.9  12.2  -1.80    1.2
+
+All three auxiliary tests now on the censored-share Tobit, c=0.90, batter-clustered.
+VIFs are within-season (design-only, hence identical to the OLS-era checks).

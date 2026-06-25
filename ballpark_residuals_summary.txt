@@ -1,0 +1,42 @@
+BALLPARK RESIDUAL PROFILES  (residuals of the two-way wOBA model)
+======================================================================
+14,012,522 position-player PAs; 105 parks; per-PA residual SD 0.510
+A park's mean residual = quality-adjusted run factor (players differenced out).
+
+--- park run factor (EB-shrunk; K=3,887 PA, between-park SD=0.0082 wOBA) ---
+  parks vary by ~0.8 wOBA points (1 SD) after removing players.
+  lowest (pitcher-friendly):  HOU01-0.018, SEA03-0.015, CHI09-0.013, SAN02-0.013, OAK01-0.013, BOS08-0.012, LOS03-0.011, HOU02-0.010
+  highest (hitter-friendly):  DEN02+0.034, DEN01+0.031, PHI09+0.022, LOS02+0.016, NYC13+0.013, ARL02+0.012, PHO01+0.011, LOS01+0.011
+
+--- park POWER-reward slope (resid per unit park-exogenous power; EB K=48) ---
+  positive = the park lifts power hitters above their linear-weights wOBA.
+  most power-SUPPRESSING: WAS09-0.12, STL05-0.11, DET05-0.10, PIT06-0.10, CLE07-0.09, HOU01-0.08, HOU02-0.08, STP01-0.08
+  most power-REWARDING:   PHI09+0.37, DEN02+0.15, CLE06+0.13, STL07+0.10, MIL06+0.09, NYC15+0.09, ARL02+0.08, ATL01+0.08
+
+--- mean residual by position x power quartile (x1000 wOBA) ---
+pow_q      Q1_low  Q2  Q3  Q4_high
+pos                               
+C              -0  +0  +0       +0
+SS             -1  +0  +0       +0
+2B             -0  -0  +0       +2
+3B             -0  +0  +0       +1
+CF             -1  -0  +0       +0
+CORNER_OF      -1  -0  +0       +1
+1B             -1  -0  +0       +1
+DH            -17  -4  -0       +1
+  (In the BATTING residual, position mostly proxies power composition; the
+   genuine 'park rewards fielding at a position' question is the allocation
+   residual -- stage 2, which consumes the park profile written below.)
+
+--- park profile written (105 parks) ---
+  corr(run_factor, power_slope)   = +0.61  (hitter parks tend to reward power)
+  corr(run_factor, triples_factor)= +0.29
+  corr(power_slope, triples_factor)= -0.15  (power parks vs big-outfield parks: expect NEGATIVE if distinct)
+
+Stage 2 (separate script): attach each batter-season's home park profile to
+the allocation panel and run the censored-share Tobit with position x park
+interactions -- e.g. is the CF allocation premium larger in high-triples
+parks. If park profiles are symmetric across positions and uncorrelated with
+the allocation residual, park is 'effectively random' for the structural model
+and the exclusion is justified; if the triples/CF interaction is real, it is a
+result. Build that once we see whether triples_factor has usable spread.

@@ -1,0 +1,24 @@
+BALLPARK STAGE 2: park configuration and position allocation
+======================================================================
+matched 38,492 batter-seasons to a home-park profile; 86 parks; mean team PA 5,646
+full-time ref share=0.1165; SD(triples_factor)=0.261
+Interaction reported as % of full-time per +1 SD of triples_factor.
+Directed test: CF (outfield) should respond; SS/2B (infield) are the placebo.
+
+fit: 10.2% censored
+
+  position premium at an AVERAGE park, and its shift per +1 SD of outfield size
+         pos  prem(%FT)   x triples       t
+           C        0.3        -0.8    -1.0
+          SS       20.4        -0.7    -0.9  <- infield placebo
+          2B       14.9        -1.3    -1.7  <- infield placebo
+          3B        9.5        +0.2     0.3
+          CF        9.0        +0.0     0.0  <- CF (treatment)
+          1B        4.7        -1.2    -1.5
+          DH       -3.4        -0.7    -0.4
+
+Read CF vs SS/2B: CF 'x triples' positive & significant with SS/2B ~0 means
+big-outfield parks buy center-field range (a fielding-allocation result). If CF
+is also ~0, park is effectively random for allocation and the structural model
+excludes it cleanly. run_factor interactions are partialled out, so this is not
+a hitter-park artifact.

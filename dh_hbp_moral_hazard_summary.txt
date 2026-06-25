@@ -1,0 +1,75 @@
+[league reconstructed for 100.0% of PAs from Teams.csv]
+DH MORAL HAZARD / HIT BATSMEN
+========================================================================
+ 14,382,806 non-pitcher PAs; overall HBP rate 0.690%; DH-in-effect share 0.334
+
+  -- Cut 1: full post-1973  (n=8,586,230, cluster=pitcher, FE=decade) --
+                term   coef(pp)        SE       t
+                  dh     0.0237    0.0102    2.31  <-- shield
+                  bq     0.0611    0.0034   17.72
+                  pq     0.0248    0.0065    3.84
+               pwild     0.1595    0.0070   22.66
+
+  -- Cut 1b: GST window 1973-1990 (controlled micro)  (n=2,680,192, cluster=pitcher, FE=season) --
+                term   coef(pp)        SE       t
+                  dh     0.0823    0.0149    5.53  <-- shield
+                  bq     0.0627    0.0045   14.04
+                  pq     0.0099    0.0119    0.84
+               pwild     0.0850    0.0107    7.93
+
+  -- Cut 2: interleague 1997-2019 (park-toggle)  (n=443,219, cluster=pitcher, FE=season) --
+                term   coef(pp)        SE       t
+                  dh     0.0388    0.0291    1.33  <-- shield
+                  bq     0.0764    0.0163    4.70
+                  pq     0.0168    0.0178    0.94
+               pwild     0.1753    0.0182    9.61
+
+  -- Cut 3: within-pitcher DiD around 2022 universal DH  (n=1,541,236, cluster=pitcher, FE=pitcher) --
+                term   coef(pp)        SE       t
+                  dh    -0.0151    0.0265   -0.57  <-- shield
+                  bq     0.0508    0.0092    5.51
+
+  -- Cut 3b: explicit DiD (NL pitchers gain shielding at 2022; AL = control)  (n=1,541,236, cluster=pitcher, FE=pitcher) --
+                term   coef(pp)        SE       t
+          treat_post     0.0086    0.0432    0.20
+                post     0.0715    0.0384    1.86
+                  bq     0.0518    0.0092    5.62
+
+========================================================================
+AGGREGATE REPLICATION  (the originals' samples, from our panel)
+========================================================================
+                            window  AL HBP%  NL HBP%   AL/NL   gap%
+     1973-1990  GST(1997) original    0.524    0.448   1.169   16.9
+    1973-1997  GST(1998) extension    0.580    0.534   1.087    8.7
+             1973-2025  full panel    0.778    0.801   0.971   -2.9
+  (GST's 10-15% is the 1973-1990 'gap%'. Watch it shrink on extension --
+   their own 1998 retraction. The micro cuts above attribute the residual
+   to batter composition + era, not moral hazard.)
+
+========================================================================
+ROLLING-WINDOW SHIELDING COEFFICIENT  (one spec, varying window)
+========================================================================
+         window center          n   dh(pp)      SE      t
+  1973-1987   1980  2,222,697   0.0757  0.0157   4.83
+  1976-1990   1983  2,250,553   0.0885  0.0160   5.53
+  1979-1993   1986  2,275,049   0.0882  0.0163   5.41
+  1982-1996   1989  2,306,274   0.0613  0.0170   3.60
+  1985-1999   1992  2,372,118   0.0464  0.0180   2.58
+  1988-2002   1995  2,447,443   0.0283  0.0186   1.52
+  1991-2005   1998  2,531,869   0.0171  0.0193   0.89
+  1994-2008   2001  2,600,023  -0.0007  0.0187  -0.04
+  1997-2011   2004  2,690,252   0.0144  0.0175   0.82
+  2000-2014   2007  2,686,656   0.0099  0.0169   0.58
+  2003-2017   2010  2,670,279   0.0016  0.0167   0.10
+  2006-2020   2013  2,529,882  -0.0174  0.0174  -1.00
+  2009-2023   2016  2,487,385  -0.0225  0.0188  -1.20
+
+  era blocks (same controlled spec):
+          block          n   dh(pp)      SE      t
+    1973-1990  2,680,192   0.0823  0.0149   5.53
+    1991-2005  2,531,869   0.0171  0.0193   0.89
+    2006-2021  2,693,223  -0.0257  0.0170  -1.52
+    2022-2025: no DH variation in block (skipped)
+
+wrote dh_hbp_season_league.csv (116 seasons) and dh_hbp_rolling.csv
+  wrote fig_hbp_al_nl.png and fig_hbp_rolling.png
