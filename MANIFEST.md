@@ -1,17 +1,6 @@
 # MANIFEST
 
-Annotated inventory of the Mesoball repository. The **Status** column is a
-recommendation for what belongs in the published GitHub repo:
-
-- **commit** — source the repo should contain
-- **commit (small ref)** — a small reference table safe to commit
-- **output** — a generated artifact (regenerable by running the code; commit only if
-  you want results browsable without a local run — otherwise gitignore)
-- **local only** — large or raw input, do not commit (gitignored)
-- **not for repo** — manuscript drafts, handoffs, and OS duplicate files
-
-Some shared modules (`meso_core.py`, `fit_two_way.py`) are imported by the scripts but
-are not present in this snapshot; they live in the working tree and should be committed.
+Annotated inventory of the Mesoball repository. 
 
 ---
 
@@ -19,8 +8,8 @@ are not present in this snapshot; they live in the working tree and should be co
 
 | File | Purpose |
 |---|---|
-| `meso_core.py` *(expected; not in snapshot)* | Tobit core (`fit_tobit`, clustered SEs, `lincom`, spline basis), units layer (Pythagenpat runs/win, woba→runs→wins), constants/paths. Imported by 15 scripts. |
-| `fit_two_way.py` *(expected; not in snapshot)* | Two-way batter×pitcher fixed-effects skill fit. Imported by the dispersion scripts. |
+| `meso_core.py` | Tobit core (`fit_tobit`, clustered SEs, `lincom`, spline basis), units layer (Pythagenpat runs/win, woba→runs→wins), constants/paths. Imported by 15 scripts. |
+| `fit_two_way.py` | Two-way batter×pitcher fixed-effects skill fit. Imported by the dispersion scripts. |
 
 ## Build pipeline — `u_` prefix (commit)
 
@@ -29,8 +18,6 @@ are not present in this snapshot; they live in the working tree and should be co
 | `u_build_pa_panel.py` | Build `pa_panel.parquet` (15.4M PA) from raw Retrosheet — ids, dates, ages, hands, `park_id`, `woba_value`, outcome flags. The root of everything. |
 | `u_build_cohort_cube.py` | Aggregate the PA panel to (pitcher birth-year, batter birth-year, season) cells for the cohort/era cross-check. |
 | `u_chained_delta_seasons.py` | Reproduce the *Wrong Number* ch.19 chained-delta era method in wOBA points (cross-check on the era result). |
-
-> Also referenced in the handoffs but **not in this snapshot:** `u_chained_delta_lahman_access.txt` (the Access-SQL replication cross-check). Commit it alongside the above if you keep the era cross-check in the repo.
 
 ## Case-study analysis scripts (commit; most are `(exploratory)` working versions)
 
@@ -96,7 +83,7 @@ are not present in this snapshot; they live in the working tree and should be co
 | `platoon_allocation_tobit.py` | Step 2 — platoon loading on own-hand advantage, overall skill fixed. |
 | `residual_leaderboard.py` | Career allocation-residual leaderboard (no player term in the prediction). |
 
-### Coverage / units / utilities (commit)
+### Coverage / units / utilities
 | File | Purpose |
 |---|---|
 | `coverage_diagnostic.py` | *(foundational)* Retrosheet panel completeness by season. |
@@ -105,17 +92,14 @@ are not present in this snapshot; they live in the working tree and should be co
 
 ---
 
-## Reference data (commit — small)
+## Reference data
 
 | File | Purpose |
 |---|---|
 | `wOBA_weights.csv` | FanGraphs season wOBA weights (1871–2026). |
 | `Teams.csv` | Lahman team-season totals — AL/NL filtering and Pythagenpat RPG. |
 
-## Generated result artifacts (output — regenerable)
-
-These are produced by the scripts above. Commit them only if you want results browsable
-without a local run; otherwise gitignore. Several feed the paper's tables/figures.
+## Generated result artifacts 
 
 `pa_allocation_pos_age.csv`, `pa_allocation_pos_era.csv`, `contact_fielding_test_coef.csv`,
 `expansion_fit_coef.csv`, `mu_three_schemes.csv`, `mu_seasonw_vs_fixedw.csv`,
@@ -130,26 +114,4 @@ Text/summary outputs (logs of result scripts): `clutch_summary.txt`, `hot_hand_s
 `platoon_allocation_tobit_summary.txt`, `share_tobit_aux_summary.txt`,
 `ballpark_allocation_stage2_summary.txt`, `residual_leaderboard_summary.txt`,
 `ballpark_residuals_summary.txt`, `dh_allocation_test_summary.txt`,
-`streak_clutch_tails.txt`, `candidate_shocks.md`.
-
-> **Two known regeneration flags** (from the manuscript fix list): `residual_leaderboard.csv`
-> still shows first names (it was built with `usename`; rerun with `fullname`), and the
-> bat-slope / positional-premia reconciliation should be settled before these CSVs are
-> treated as final.
-
-## Local only — do not commit (gitignore)
-
-`pa_panel.parquet`, `leverage_panel.parquet`, `pa_team_share.parquet`,
-`pa_allocation_panel.parquet`, the raw Retrosheet directory, and any other parquet/large
-caches.
-
-## Not for the code repo
-
-Manuscript and process files — keep in a `/docs` folder or a separate location:
-`c19_e.docx`, `Mesoball_final.docx`, `Mesoball_draft_4.docx`, `Mesoball_v2_tracked.docx`,
-`Mesoball_Palmer_section.docx`, `Mesoball_omnibus_draft.md`, `Mesoball_results_draft_2.md`,
-`HANDOFF.md`, `HANDOFF_draft4.md`, `HANDOFF_cleanup.md`.
-
-OS duplicate files to delete: `wOBA_weights  Copy 2.csv`, `Teams  Copy.csv`,
-`hand_split_skill_-_Copy.py` (rename to `hand_split_skill.py`),
-`aging_effective_summary_-_Copy.txt`.
+`streak_clutch_tails.txt`, `candidate_shocks.md`
