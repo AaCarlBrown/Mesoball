@@ -1,0 +1,11 @@
+equirements · TXT
+# Core
+pandas
+numpy
+pyarrow
+scipy
+pyfixest
+matplotlib
+ 
+# Optional — only for fetch_fielding_external.py (OAA validation)
+pybaseball
